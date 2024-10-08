@@ -1,17 +1,25 @@
-function palindrome(str) {
-  let strLowerCase = str.toLowerCase();
-  let editedStr = strLowerCase.replace(/[^0-9a-z]/gi, ''); 
-  let characters = editedStr.split("");
-  let charactersReversed = characters.slice(0).reverse();
-  let result = true;
+// program to check if the string is palindrome or not
 
-  for (let i = 0; i < characters.length; i++){
-    if (characters[i] != charactersReversed[i]){
-      result = false;
+function checkPalindrome(string) {
+
+    // convert string to an array
+    const arrayValues = string.split('');
+
+    // reverse the array values
+    const reverseArrayValues = arrayValues.reverse();
+
+    // convert array to string
+    const reverseString = reverseArrayValues.join('');
+
+    if(string == reverseString) {
+        console.log('It is a palindrome');
     }
-  }
-
-  return result;
+    else {
+        console.log('It is not a palindrome');
+    }
 }
 
-console.log(palindrome("eye"));
+//take input
+const string = prompt('Enter a string: ');
+
+checkPalindrome(string);
